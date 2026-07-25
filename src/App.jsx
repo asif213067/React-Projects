@@ -2,12 +2,30 @@
 import './App.css'
 
 import Accordion from "./components/accordion/Accordion"
+import RandomColor from './components/random-color-generate/RandomColor'
 
 const App = () => {
   return (
-    <div className="App">
-      {/* Accordion Components  */}
-      <Accordion />
+    <div className="app">
+      <section className="project">
+
+        <h2 className="project-title">
+          Accordion Component
+        </h2>
+
+        <Accordion />
+
+      </section>
+
+      <section className="project">
+
+        <h2 className="project-title">
+          Random Color Generator
+        </h2>
+
+        <RandomColor />
+
+      </section>
     </div>
   )
 }
