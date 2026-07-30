@@ -1,5 +1,5 @@
 // import React from 'react'
-import './accordion.css'
+import styles from './Accordion.module.css'
 import { useState } from 'react'
 import data from './accordionData'
 
@@ -26,23 +26,23 @@ const Accordion = () => {
     // console.log(selected, multiple);
 
     return (
-        <div className="wrapper">
+        <div className={styles.wrapper}>
             <button
                 onClick={() => setEnableMultiSelection(!enableMultiSelection)}
-                className='btn'
+                className={styles.btn}
             >
                 {enableMultiSelection ? "Disable" : "Enable"} Multi Selection
             </button>
             {data && data.length > 0 ? (
                 data.map((dataItem) => {
 
-                    return <div className='item'>
+                    return <div className={styles.item}>
                         <div
                             onClick={enableMultiSelection
                                 ? () => handleMultiSelection(dataItem.id)
                                 : () => handleSingleSelection(dataItem.id)
                             }
-                            className="title"
+                            className={styles.title}
                         >
                             <h3>{dataItem.question}</h3>
                             <span>{selected === dataItem.id ? '-' : '+'}</span>
@@ -56,10 +56,10 @@ const Accordion = () => {
                         } */}
                         {enableMultiSelection
                             ? multiple.indexOf(dataItem.id) !== -1 && (
-                                <div className="acc-content ">{dataItem.answer}</div>
+                                <div className={styles.accContent}>{dataItem.answer}</div>
                             )
                             : selected === dataItem.id && (
-                                <div className="acc-content ">{dataItem.answer}</div>
+                                <div className={styles.accContent}>{dataItem.answer}</div>
                             )
                         }
                     </div>

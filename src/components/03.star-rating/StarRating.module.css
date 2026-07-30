@@ -1,0 +1,31 @@
+.starRating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+  border-radius: 16px;
+  background: #f5f3f3;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Common style for all stars */
+.starRating svg {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover animation */
+.starRating svg:hover {
+  transform: scale(1.15);
+}
+
+/* Selected stars */
+.active {
+  color: #e1f108f0;
+}
+
+/* Unselected stars */
+.inactive {
+  color: #ffffff;
+}
